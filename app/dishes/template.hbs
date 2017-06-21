@@ -1,1 +1,9 @@
-{{outlet}}
+
+<h3>Menu</h3>
+{{#each model as |dish|}}
+  <li>{{dish.name}}</li>
+  {{!-- <li>{{dish.khmerName}}</li> --}}
+  <li>{{dish.description}}</li>
+  <li>{{dish.price}}</li>
+  <br>
+{{/each}}
