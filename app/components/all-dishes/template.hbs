@@ -1,0 +1,13 @@
+{{#if isAuthenticated}}
+  <!--If user is authenticated add button to enable edit-->
+  <button class="btn" type="button" name="button">Edit</button>
+  {{all-forms/add-dish saveDish="save"}}
+{{/if}}
+
+{{#each dishes as |dish|}}
+  <li>{{dish.name}}</li>
+  {{!-- <li>{{dish.khmerName}}</li> --}}
+  <li>{{dish.description}}</li>
+  <li>{{dish.price}}</li>
+  <br>
+{{/each}}

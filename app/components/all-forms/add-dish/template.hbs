@@ -1,0 +1,18 @@
+<label for="item-name">Menu Item Name</label>
+{{input type="input"
+        id="item-name"
+        placeholder="Name of item"
+        value=data.name}}
+<label for="item-description">Description</label>
+{{input type="input"
+        id="item-description"
+        placeholder="Describe the dish"
+        value=data.description}}
+<label for="item-price">Price</label>
+{{input type="input"
+        id="item-price"
+        placeholder="Price"
+        value=data.price}}
+
+
+<button type="button" name="button" {{action "saveNewItem"}}></button>

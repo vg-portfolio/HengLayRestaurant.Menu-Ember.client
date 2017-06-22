@@ -1,9 +1,2 @@
-
-<h3>Menu</h3>
-{{#each model as |dish|}}
-  <li>{{dish.name}}</li>
-  {{!-- <li>{{dish.khmerName}}</li> --}}
-  <li>{{dish.description}}</li>
-  <li>{{dish.price}}</li>
-  <br>
-{{/each}}
+<h3>All Dishes</h3>
+{{all-dishes dishes=dishes saveDish="save"}}
