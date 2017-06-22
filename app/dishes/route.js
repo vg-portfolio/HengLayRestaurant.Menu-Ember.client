@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       dishes: this.store.findAll('dish'),
-      category: this.store.findAll('category')
+      categories: this.store.findAll('category')
     });
   },
   setupController(controller, models) {
@@ -29,6 +29,7 @@ export default Ember.Route.extend({
       })
       .catch(() =>{
         console.log("Error");
+        this.store.unloadRecord(item);
       });
     },
     edit(){

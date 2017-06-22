@@ -1,13 +1,39 @@
 {{#if isAuthenticated}}
   <!--If user is authenticated add button to enable edit-->
-  <button class="btn" type="button" name="button">Edit</button>
-  {{all-forms/add-dish saveDish="save"}}
+  <!--Admin panels-->
+  {{#md-card-panel class="teal center-align"
+      bodyClass="white-text"
+      id="card-panel"}}
+          <button class="btn" type="button" name="button" {{action "addNewItem"}}>Add New</button>
+          <button class="btn" type="button" name="button" {{action "edit"}}>Edit</button>
+  {{/md-card-panel}}
+  <!--/.Admin panels-->
+  <!--Add dish form-->
+  {{all-forms/add-dish category=category  saveDish="save"}}
+  <!--/.Add dish form-->
+  {{!-- <button class="btn" type="button" name="button">Edit</button> --}}
 {{/if}}
 
-{{#each dishes as |dish|}}
-  <li>{{dish.name}}</li>
-  {{!-- <li>{{dish.khmerName}}</li> --}}
-  <li>{{dish.description}}</li>
-  <li>{{dish.price}}</li>
-  <br>
-{{/each}}
+<!--Category Types-->
+<!--To do: make each tab display appropriate content-->
+{{#md-tabs
+  selected=categoryType}}
+  {{#each category as |category|}}
+  {{md-tab value=category.id title=category.categoryType}}
+  {{/each}}
+{{/md-tabs}}
+<!--/.Category Types-->
+
+<!--Collection of menu items-->
+<h3>All Dishes</h3>
+{{#md-collection content=dishes as |item|}}
+  <div class='collection-item avatar'>
+    {{!-- <i class="circle green mdi-action-favorite"></i> --}}
+    <span class="menu-item title">{{item.name}} {{item.khmerName}}</span>
+    <p>{{item.description}}</p>
+    {{#link-to item.route class='secondary-content'}}
+      <span>${{item.price}}</span>
+    {{/link-to}}
+  </div>
+{{/md-collection}}
+<!--/.Collection of menu items-->

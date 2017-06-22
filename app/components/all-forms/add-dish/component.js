@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     saveNewItem: function(){
       console.log(this.get('data'));
       this.sendAction('saveDish', this.get('data'));
-
+      this.set('data', {});
     },
     edit: function(){
       //Create edit logic here

@@ -1,18 +1,28 @@
-<label for="item-name">Menu Item Name</label>
-{{input type="input"
-        id="item-name"
-        placeholder="Name of item"
-        value=data.name}}
-<label for="item-description">Description</label>
-{{input type="input"
-        id="item-description"
-        placeholder="Describe the dish"
-        value=data.description}}
-<label for="item-price">Price</label>
-{{input type="input"
-        id="item-price"
-        placeholder="Price"
-        value=data.price}}
-
-
-<button type="button" name="button" {{action "saveNewItem"}}></button>
+<!--Add item card-->
+{{#md-card title="Add new item" id="new-item-card"}}
+    {{#md-card-content}}
+        <div class="row">
+          {{md-input value=data.name label='Menu item' class="col s12 m6" validate=true}}
+          {{md-input value=data.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
+        </div>
+        <div class="row">
+          {{md-textarea label='Description'
+            value=data.description class="col s12"}}
+        </div>
+        <div class="row">
+          {{md-input value=data.price label='Price' class="col s12 m4" validate=true}}
+<!--To do: Pass category down to route to save relationship-->
+          {{md-select content=category
+            value=categoryType
+            label="Category"
+            prompt="Category"
+            optionLabelPath="content.categoryType"
+            optionValuePath="content.id" class="col s12 m8"}}
+        </div>
+    {{/md-card-content}}
+    {{#md-card-action class="right-align"}}
+        <button class="btn" type="button" name="button" {{action "saveNewItem"}}>Save</button>
+        <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
+    {{/md-card-action}}
+{{/md-card}}
+<!--/.Add item card-->
