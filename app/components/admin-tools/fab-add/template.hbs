@@ -1,0 +1,32 @@
+
+  <!--Adds admin controls FAB-->
+  {{#md-fixed-btns
+    	class="fixed-btns-example"
+    	btnIcon="mdi-content-add"
+    	btnClass="btn-large red darken-2"
+    	actionArgs="0"}}
+
+    	{{md-fixed-btn
+    		btnClass="red"
+    		btnIcon="mdi-action-class"
+    		action="showItemModal"
+    		actionArgs="1"}}
+        <!--actionArgs=An object or value to be passed to action handlers when it fires-->
+
+    	{{md-fixed-btn
+    		btnClass="red"
+    		btnIcon="mdi-content-grade"
+    		action="showCategoryModal"
+    		actionArgs="abc"}}
+  {{/md-fixed-btns}}
+
+  {{#if isItemModalShown}}
+    {{modal-window/new-item
+      isModalShown=isItemModalShown
+      saveItem=attrs.saveItem}}
+  {{/if}}
+
+  {{#if isCategoryModalShown}}
+    {{modal-window/new-category
+      isModalShown=isCategoryModalShown}}
+  {{/if}}

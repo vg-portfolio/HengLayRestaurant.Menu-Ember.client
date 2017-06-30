@@ -13,30 +13,25 @@ export default Ember.Route.extend({
     // or, more concisely:
     // controller.setProperties(models);
   },
-
   actions: {
-    save (data){
+    //DATA LOGIC/////////////////////////////////
+    saveDish (data){
       let item = this.store.createRecord('dish', data);
+      //Need to dynamically load category
       let category = this.store.peekRecord('category', 3);
       console.log(category);
       category.get('dishes').pushObject(item);
-      item.save()
+      return item.save()
       .then(() => {
         category.save();
       })
       .then(() => {
-        console.log("save success!");
+        console.log("Save success");
       })
       .catch(() =>{
-        console.log("Error");
-        this.store.unloadRecord(item);
+        //Add toast to indicate to user that there was an error
+        item.rollbackAttributes();
       });
     },
-    edit(){
-      //Add edit dish logic here
-    },
-    delete(){
-      //Add delete dish logic here
-    },
-  }
+  },
 });

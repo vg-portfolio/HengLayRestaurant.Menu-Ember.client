@@ -1,0 +1,34 @@
+
+{{#md-modal close='closeModal' class="new-item-modal"}}
+    <div class="modal-content">
+      <!--Admin controls -->
+      {{#md-card-panel class="teal center-align"
+          bodyClass="white-text"
+          id="card-panel"}}
+              <button class="btn" type="button" name="button" {{action "addNewItem"}}>+ Menu Item</button>
+              <button class="btn" type="button" name="button" {{action "addNewCategory"}}>+ Category</button>
+      {{/md-card-panel}}
+
+      {{#if showNewItemForm}}
+        {{all-forms/add-dish saveDish="saveDish"}}
+      {{/if}}
+
+      {{#if showNewCategoryForm}}
+        {{add-forms/add-category saveCategory="saveCategory"}}
+      {{/if}}
+
+      {{!-- <h3>Admin Panel</h3>
+      {{#each model as |category|}}
+        <li>{{category.categoryType}}</li>
+      {{/each}} --}}
+
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'agree'}}>
+            Done!
+        </a>
+        <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+            Cancel
+        </a>
+    </div>
+{{/md-modal}}

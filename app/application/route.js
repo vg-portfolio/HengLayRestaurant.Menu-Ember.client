@@ -7,8 +7,8 @@ export default Ember.Route.extend({
   actions: {
     signOut () {
       this.get('auth').signOut()
-        .then(() => this.get('store').unloadAll())
-        .then(() => this.transitionTo('sign-in'))
+        // .then(() => this.get('store').unloadAll())
+        .then(() => this.transitionTo('index'))
         .then(() => {
           this.get('flashMessages').warning('You have been signed out.');
         })
@@ -16,7 +16,7 @@ export default Ember.Route.extend({
           this.get('flashMessages')
           .danger('There was a problem. Are you sure you\'re signed-in?');
         });
-    },
+    }, //signOut
 
     error (reason) {
       let unauthorized = reason.errors && reason.errors.some((error) =>
@@ -31,8 +31,8 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
       }
-
       return false;
-    },
-  },
+    }, //error
+  }, //actions
+
 });

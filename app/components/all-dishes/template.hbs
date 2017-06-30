@@ -1,30 +1,13 @@
-{{#if isAuthenticated}}
-  <!--If user is authenticated add button to enable edit-->
-  <!--Admin panels-->
-  {{#md-card-panel class="teal center-align"
-      bodyClass="white-text"
-      id="card-panel"}}
-          <button class="btn" type="button" name="button" {{action "addNewItem"}}>Add New</button>
-          <button class="btn" type="button" name="button" {{action "edit"}}>Edit</button>
-  {{/md-card-panel}}
-  <!--/.Admin panels-->
-  <!--Add dish form-->
-  {{all-forms/add-dish category=category  saveDish="save"}}
-  <!--/.Add dish form-->
-  {{!-- <button class="btn" type="button" name="button">Edit</button> --}}
-{{/if}}
-
-<!--Category Types-->
+<!--Category Types//////////////////////////-->
 <!--To do: make each tab display appropriate content-->
-{{#md-tabs
-  selected=categoryType}}
+{{#md-tabs selected=categoryType}}
   {{#each category as |category|}}
-  {{md-tab value=category.id title=category.categoryType}}
+    {{md-tab value=category.id title=category.categoryType}}
   {{/each}}
 {{/md-tabs}}
 <!--/.Category Types-->
 
-<!--Collection of menu items-->
+<!--Collection of menu items////////////////-->
 <h3>All Dishes</h3>
 {{#md-collection content=dishes as |item|}}
   <div class='collection-item avatar'>
@@ -37,3 +20,9 @@
   </div>
 {{/md-collection}}
 <!--/.Collection of menu items-->
+
+<!--FAB to add menu item and categories////////////////-->
+{{#if isAuthenticated}}
+  {{admin-tools/fab-add saveItem=attrs.saveItem}}
+{{/if}}
+<!--./FAB to add menu item and categories-->

@@ -1,13 +1,9 @@
 <!--Add item card-->
-{{#md-card title="Add new item" id="new-item-card"}}
+{{#md-card title="Add new item" id="new-item-card" class="modal-card"}}
     {{#md-card-content}}
         <div class="row">
           {{md-input value=data.name label='Menu item' class="col s12 m6" validate=true}}
           {{md-input value=data.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
-        </div>
-        <div class="row">
-          {{md-textarea label='Description'
-            value=data.description class="col s12"}}
         </div>
         <div class="row">
           {{md-input value=data.price label='Price' class="col s12 m4" validate=true}}
@@ -19,6 +15,11 @@
             optionLabelPath="content.categoryType"
             optionValuePath="content.id" class="col s12 m8"}}
         </div>
+        <div class="row">
+          {{md-textarea label='Description'
+            value=data.description class="col s12"}}
+        </div>
+
     {{/md-card-content}}
     {{#md-card-action class="right-align"}}
         <button class="btn" type="button" name="button" {{action "saveNewItem"}}>Save</button>
