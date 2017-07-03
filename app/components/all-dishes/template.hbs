@@ -1,14 +1,14 @@
 <!--Category Types//////////////////////////-->
 <!--To do: make each tab display appropriate content-->
-{{#md-tabs selected=categoryType}}
+{{!-- {{#md-tabs selected=categoryType}}
   {{#each category as |category|}}
     {{md-tab value=category.id title=category.categoryType}}
   {{/each}}
-{{/md-tabs}}
+{{/md-tabs}} --}}
 <!--/.Category Types-->
 
 <!--Collection of menu items////////////////-->
-<h3>All Dishes</h3>
+<h4>All Dishes</h4>
 {{#md-collection content=dishes as |item|}}
   <div class='collection-item avatar'>
     {{!-- <i class="circle green mdi-action-favorite"></i> --}}

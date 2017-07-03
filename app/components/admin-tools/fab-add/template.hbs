@@ -1,25 +1,39 @@
-
+{{!-- icon='mdi-action-favorite
   <!--Adds admin controls FAB-->
   {{#md-fixed-btns
     	class="fixed-btns-example"
-    	btnIcon="mdi-content-add"
-    	btnClass="btn-large red darken-2"
+      btnIcon="view_day"
+    	btnClass="btn-large red darken-2 material-icons"
     	actionArgs="0"}}
 
-    	{{md-fixed-btn
+    	{{#md-fixed-btn
     		btnClass="red"
-    		btnIcon="mdi-action-class"
+    		btnIcon="view_day"
     		action="showItemModal"
     		actionArgs="1"}}
         <!--actionArgs=An object or value to be passed to action handlers when it fires-->
+        <i class="material-icons">add</i>
+      {{/md-fixed-btn}}
 
     	{{md-fixed-btn
     		btnClass="red"
     		btnIcon="mdi-content-grade"
     		action="showCategoryModal"
     		actionArgs="abc"}}
-  {{/md-fixed-btns}}
 
+  {{/md-fixed-btns}} --}}
+
+  <div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; right: 24px;">
+    <!--Main FAB with view-day icon-->
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">view_day</i>
+    </a>
+    <!--Nested buttons-->
+    <ul>
+      <li {{action "showItemModal"}}><a class="btn-floating green"><i class="material-icons">playlist_add</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">library_add</i></a></li>
+    </ul>
+  </div>
   {{#if isItemModalShown}}
     {{modal-window/new-item
       isModalShown=isItemModalShown
