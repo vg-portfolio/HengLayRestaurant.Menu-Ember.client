@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   didInsertElement(){
     this.set('data', {});
+    console.log(this.get('categories'));
   },
 
   actions: {

@@ -8,8 +8,8 @@
         <div class="row">
           {{md-input value=data.price label='Price' class="col s12 m4" validate=true}}
 <!--To do: Pass category down to route to save relationship-->
-          {{md-select content=category
-            value=categoryType
+          {{md-select content=categories
+            value=data.category
             label="Category"
             prompt="Category"
             optionLabelPath="content.categoryType"

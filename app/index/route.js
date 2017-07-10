@@ -18,7 +18,7 @@ export default Ember.Route.extend({
     saveDish (data){
       let item = this.store.createRecord('dish', data);
       //Need to dynamically load category
-      let category = this.store.peekRecord('category', 3);
+      let category = this.store.peekRecord('category', data.category);
       console.log(category);
       category.get('dishes').pushObject(item);
       return item.save()
