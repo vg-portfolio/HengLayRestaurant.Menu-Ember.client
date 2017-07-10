@@ -26,11 +26,12 @@ export default Ember.Route.extend({
         category.save();
       })
       .then(() => {
-        console.log("Save success");
+        Materialize.toast('New dish added', 3000, 'rounded');
       })
       .catch(() =>{
         //Add toast to indicate to user that there was an error
         item.rollbackAttributes();
+        Materialize.toast('Try again', 3000, 'rounded');
       });
     },
   },
