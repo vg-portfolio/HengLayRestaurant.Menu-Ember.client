@@ -3,7 +3,6 @@ import RSVP from 'rsvp';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
-  flashMessages: Ember.inject.service(),
 
   model () {
     return RSVP.Promise.resolve({});
@@ -13,10 +12,9 @@ export default Ember.Route.extend({
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
       .then(() => this.transitionTo('index'))
-      .then(() => this.get('flashMessages').success('Thanks for signing in!'))
+      .then(() => Materialize.toast('Welcome back!', 3000, 'rounded'))
       .catch(() => {
-        this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        Materialize.toast('Please make sure your username and password are correct', 3000, 'rounded');
       });
     },
   },

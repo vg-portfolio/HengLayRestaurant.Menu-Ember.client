@@ -1,0 +1,28 @@
+<!--Add item card-->
+{{#md-card title="Edit" id="new-item-card" class="modal-card"}}
+    {{#md-card-content}}
+        <div class="row">
+          {{md-input value=newData.name label='Menu item' class="col s12 m6" validate=true}}
+          {{md-input value=newData.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
+        </div>
+        <div class="row">
+          {{md-input value=newData.price label='Price' class="col s12 m4" validate=true}}
+<!--To do: Pass category down to route to save relationship-->
+          {{md-select content=categories
+            value=newData.category_id
+            label="Category"
+            prompt=newData.category.categoryType
+            optionLabelPath="content.categoryType"
+            optionValuePath="content.id" class="col s12 m8"}}
+        </div>
+        <div class="row">
+          {{md-textarea label='Description'
+            value=newData.description class="col s12"}}
+        </div>
+    {{/md-card-content}}
+    {{#md-card-action class="right-align"}}
+        <button class="btn" type="button" name="button" {{action "editItem"}}>Save</button>
+        <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
+    {{/md-card-action}}
+{{/md-card}}
+<!--/.Add item card-->

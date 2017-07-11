@@ -34,5 +34,27 @@ export default Ember.Route.extend({
         Materialize.toast('Try again', 3000, 'rounded');
       });
     },
+    editDish(data){
+      let category = this.store.peekRecord('category', data.category_id);
+      console.log(category);
+      let dish = this.store.peekRecord('dish', data.id);
+      dish.set('category', category);
+      dish.save()
+      .then(() => {
+        Materialize.toast('Update success', 3000, 'rounded');
+      })
+      .catch(() => {
+        Materialize.toast('Unable to update', 3000, 'rounded');
+      });
+    },
+    deleteDish(data){
+      data.destroyRecord()
+      .then(() => {
+        Materialize.toast('Delete success', 3000, 'rounded');
+      })
+      .catch(() => {
+        Materialize.toast('Could not delete', 3000, 'rounded');
+      });
+    },
   },
 });

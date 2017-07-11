@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
-  flashMessages: Ember.inject.service(),
 
   actions: {
     signOut () {
@@ -10,11 +9,10 @@ export default Ember.Route.extend({
         // .then(() => this.get('store').unloadAll())
         .then(() => this.transitionTo('index'))
         .then(() => {
-          this.get('flashMessages').warning('You have been signed out.');
+          Materialize.toast('You are signed out', 3000, 'rounded');
         })
         .catch(() => {
-          this.get('flashMessages')
-          .danger('There was a problem. Are you sure you\'re signed-in?');
+          Materialize.toast('Sign out failed', 3000, 'rounded');
         });
     }, //signOut
 
