@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('users');
   this.route('change-password');
   this.route('categories');
+  this.route('menu');
 });
 
 export default Router;
