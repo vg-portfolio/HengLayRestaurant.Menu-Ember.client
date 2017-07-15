@@ -4,11 +4,16 @@ export default Ember.Route.extend({
   auth: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
 
+  //Checks to see if user is authenticated, if not, ask for sign-in
   beforeModel() {
     if (!(this.get('isAuthenticated'))) {
-      this.transitionTo('/sign-in');
+      this.transitionTo('/sign-in')
+      .then(() => {
+        Materialize.toast('Please sign in', 5000, 'rounded');
+      })
     }
   },
+  //Loads both dish and category model
   model() {
     return Ember.RSVP.hash({
       dishes: this.store.findAll('dish'),
