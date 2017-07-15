@@ -18,13 +18,11 @@
         <p>{{dish.description}} <br>
           Second Line
         </p>
-        {{#if isAuthenticated}}
           {{admin-tools/edit-delete
             deleteItem=attrs.deleteItem
             editItem=attrs.editItem
             dish=dish
             categories=categories}}
-        {{/if}}
       </div>
     </li>
     {{/each}}

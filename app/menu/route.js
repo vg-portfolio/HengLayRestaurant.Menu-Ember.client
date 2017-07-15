@@ -45,7 +45,7 @@ export default Ember.Route.extend({
     editDish(data){
       let category = this.store.peekRecord('category', data.category_id);
       console.log(category);
-      let dish = this.store.peekRecord('dish', data);
+      let dish = this.store.peekRecord('dish', data.id);
       dish.set('category', category);
       dish.save()
       .then(() => {

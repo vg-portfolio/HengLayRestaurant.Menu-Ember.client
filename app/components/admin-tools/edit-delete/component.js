@@ -2,11 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   oldData: {},
-  showEditModal: false,
-  editDishObject: function(){
+
+  //Creates POJO object for this dish
+  populateThisDish: function(){
     this.set('oldData', this.get('dish'));
     console.log("data loaded");
   }.on('init'),
+
+  showEditModal: false,
 
   actions: {
     showEdit(){
