@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       this.transitionTo('/sign-in')
       .then(() => {
         Materialize.toast('Please sign in', 5000, 'rounded');
-      })
+      });
     }
   },
   //Loads both dish and category model
@@ -48,9 +48,9 @@ export default Ember.Route.extend({
       });
     },
     editDish(data){
+      let dish = this.store.peekRecord('dish', data.id);
       let category = this.store.peekRecord('category', data.category_id);
       console.log(category);
-      let dish = this.store.peekRecord('dish', data.id);
       dish.set('category', category);
       dish.save()
       .then(() => {

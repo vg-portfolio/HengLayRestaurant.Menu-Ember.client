@@ -4,25 +4,26 @@ export default Ember.Component.extend({
   oldData: {},
 
   //Creates POJO object for this dish
-  populateThisDish: function(){
-    this.set('oldData', this.get('dish'));
-    console.log("data loaded");
-  }.on('init'),
+  // populateThisDish: function(){
+  //   this.set('oldData', this.get('dish'));
+  //   console.log("data loaded");
+  // }.on('init'),
 
   showEditModal: false,
+  showDeleteModal: false,
 
   actions: {
     showEdit(){
       this.toggleProperty('showEditModal');
     },
-    closeModal(){
+    closeEdit(){
       this.toggleProperty('showEditModal');
     },
-    delete(dish){
-      this.attrs.deleteItem(dish);
+    showDelete(){
+      this.toggleProperty('showDeleteModal');
     },
-    // edit(){
-    //   this.attrs.editItem();
-    // }
+    closeDelete(){
+      this.toggleProperty('showDeleteModal');
+    },
   }
 });

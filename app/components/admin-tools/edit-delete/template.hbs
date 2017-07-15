@@ -1,12 +1,22 @@
-<a class="btn" {{action "delete" dish}}><i class="material-icons">delete</i></a>
+<a class="btn" {{action "showDelete"}}><i class="material-icons">delete</i></a>
 <a class="btn" {{action "showEdit"}}><i class="material-icons">edit</i></a>
 
+<!--Shows edit dish modal-->
 {{#if showEditModal}}
-{{#md-modal close='closeModal' class="new-item-modal"}}
+{{#md-modal close='closeEdit' class="edit-modal"}}
     {{all-forms/edit-dish
-      newData=oldData
+      dish=dish
       editItem=attrs.editItem
-      closeModal="closeModal"
-      categories=categories}}
+      categories=categories
+      closeModal="closeEdit"}}
+{{/md-modal}}
+{{/if}}
+
+<!--Shows delete dish modal-->
+{{#if showDeleteModal}}
+{{#md-modal close='closeDelete' class="edit-modal"}}
+    {{all-forms/delete-dish
+      dish=dish
+      deleteItem=attrs.deleteItem }}
 {{/md-modal}}
 {{/if}}

@@ -1,0 +1,22 @@
+<!--Add item card-->
+{{#md-card title="Confirm delete" id="new-item-card" class="modal-card"}}
+    {{#md-card-content}}
+        <div class="row">
+          <div class="col s10">
+            <h5>{{dish.name}}</h5>
+            <h6>{{dish.khmerName}}</h6>
+            <p>{{dish.description}}</p>
+          </div>
+          <div class="col s2">
+            <h5>${{dish.price}}</h5>
+          </div>
+        </div>
+    {{/md-card-content}}
+    {{#md-card-action class="right-align"}}
+        <button class="btn" type="button" name="button" {{action "deleteItem" dish}}>
+          <i class="material-icons">delete</i>
+        </button>
+        <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
+    {{/md-card-action}}
+{{/md-card}}
+<!--/.Add item card-->
