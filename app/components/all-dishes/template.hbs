@@ -1,39 +1,44 @@
 <div class="row">
+  <div class="col s0 m2">
+    <button class="btn" type="button" name="button" {{action 'filter' 'soups'}}>Soups</button>
+    <button class="btn" type="button" name="button" {{action 'filter' 'noodle soup'}}>Noodle soups</button>
+  </div>
   <!--Categories//////////////////////////////-->
-  <div class="col s2">
+  <div class="col s12 m10">
     {{#each categories as |cat|}}
-      <li>{{cat.categoryType}}</li>
+    <div class="card-panel center-align">
+      {{cat.categoryType}}
+    </div>
+      <!--Collection of menu items////////////////-->
+      <ul class="collection">
+        {{#each dishes as |dish|}}
+        <li class="collection-item">
+          <div>
+            <span class="title">{{dish.name}}</span>
+            <span class="khmer-title">{{dish.khmerName}}</span>
+            <span class="secondary-content"><i class="">{{dish.price}}</i></span>
+            <p>{{dish.description}} <br>
+              Second Line
+            </p>
+              {{admin-tools/edit-delete
+                deleteItem=attrs.deleteItem
+                editItem=attrs.editItem
+                dish=dish
+                categories=categories}}
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+      <!--/.Collection of menu items-->
     {{/each}}
   </div>
   <!--./categories-->
-
-  <!--Collection of menu items////////////////-->
-  <ul class="collection col s10 m8">
-    {{#each dishes as |dish|}}
-    <li class="collection-item">
-      <div>
-        <span class="title">{{dish.name}}</span>
-        <span class="khmer-title">{{dish.khmerName}}</span>
-        <span class="secondary-content"><i class="">{{dish.price}}</i></span>
-        <p>{{dish.description}} <br>
-          Second Line
-        </p>
-          {{admin-tools/edit-delete
-            deleteItem=attrs.deleteItem
-            editItem=attrs.editItem
-            dish=dish
-            categories=categories}}
-      </div>
-    </li>
-    {{/each}}
-  </ul>
-  <!--/.Collection of menu items-->
 </div>
 <!--./row-->
 
 
 <!--FAB to add menu item and categories////////////////-->
-{{#if isAuthenticated}}
-  {{admin-tools/fab-add saveItem=attrs.saveItem categories=categories}}
-{{/if}}
+{{admin-tools/fab-add
+  saveItem=attrs.saveItem
+  categories=categories }}
 <!--./FAB to add menu item and categories-->

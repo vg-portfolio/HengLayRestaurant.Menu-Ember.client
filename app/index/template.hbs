@@ -1,36 +1,46 @@
 <div class="row">
   <!--Categories: //////////////////////////////-->
-  <div class="col m2 hide-on-small-only">
+  <div class="col s0 m2">
+    {{#each categories as |category|}}
+
+    {{/each}}
+  </div>
+  <div class="col s12 m10">
     {{#each categories as |cat|}}
-      <li>{{cat.categoryType}}</li>
+    <div class="card-panel center-align">
+      {{cat.categoryType}}
+    </div>
+      <!--Collection of menu items////////////////-->
+      <ul class="collection">
+        {{#each cat.dishes as |dish|}}
+        <li class="collection-item row">
+          <div class="col s12 m10">
+            <div class="item-title">
+              <span class="dish-name">{{dish.name}}</span><br>
+              <span class="dish-khmer-name">{{dish.khmerName}}</span>
+            </div>
+            {{!-- <div class="khmer-title">{{dish.khmerName}}</div> --}}
+            <p>{{dish.description}}
+              <br>
+              Second Line
+            </p>
+          </div>
+          <div class="col s0 m2">
+            <p class="item-price">
+              Md {{dish.price}}
+              <br>
+              Lg {{dish.price}}
+            </p>
+          </div>
+
+        </li>
+        {{/each}}
+      </ul>
+      <!--/.Collection of menu items-->
     {{/each}}
   </div>
   <!--./categories-->
 
-  <!--Collection of menu items////////////////-->
-  <ul class="collection col s12 m6">
-    {{#each dishes as |dish|}}
-    <li class="collection-item row">
-      <div class="col s12 m10">
-        <div class="item-title">{{dish.name}}</div>
-        <div class="khmer-title">{{dish.khmerName}}</div>
-        <p>{{dish.description}}
-          <br>
-          Second Line
-        </p>
-      </div>
-      <div class="col s0 m2">
-        <p class="item-price">
-          Md {{dish.price}}
-          <br>
-          Lg {{dish.price}}
-        </p>
-      </div>
-
-    </li>
-    {{/each}}
-  </ul>
-  <!--/.Collection of menu items-->
 </div>
 <!--./row-->
 
