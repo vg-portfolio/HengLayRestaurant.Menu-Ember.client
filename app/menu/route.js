@@ -13,19 +13,12 @@ export default Ember.Route.extend({
       });
     }
   },
-  //Loads both dish and category model
+  //Loads category model then load its associations
   model() {
-    return this.store.findAll('category');
+    //refreshing pages will not load dishes
+    return this.store.findAll('category', { reload: true });
   },
-  //   return Ember.RSVP.hash({
-  //     dishes: this.store.findAll('dish'),
-  //     categories: this.store.findAll('category')
-  //   });
-  // },
-  // setupController(controller, models) {
-  //   controller.set('dishes', models.dishes);
-  //   controller.set('categories', models.categories);
-  // },
+  
   actions: {
     //DATA LOGIC/////////////////////////////////
     saveDish (data){
