@@ -13,7 +13,7 @@
         </div>
     {{/md-card-content}}
     {{#md-card-action class="right-align"}}
-        <button class="btn" type="button" name="button" {{action "deleteItem" dish}}>
+        <button class="btn" type="button" name="button" {{action (action deleteItem) dish}}>
           <i class="material-icons">delete</i>
         </button>
         <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>

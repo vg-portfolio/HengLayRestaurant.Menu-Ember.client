@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s0 m2">
+    <!--Show all dishes button-->
+    <button class="btn" type="button" name="button" {{action 'filter' null}}>Show All</button>
+    <!--Show specific category buttons-->
+    {{#each categories as |cat|}}
+      <button class="btn" type="button" name="button" {{action 'filter' cat.categoryType}}>{{cat.categoryType}}</button>
+    {{/each}}
+  </div>
+  <!--Dish list//////////////////////////////-->
+  <div class="col s12 m8">
+    {{#each filteredCategory as |f|}}
+      {{dishes-list filteredCategory=f
+        deleteItem=attrs.deleteItem }}
+    {{/each}}
+  </div>
+</div>
+<!--//.row-->

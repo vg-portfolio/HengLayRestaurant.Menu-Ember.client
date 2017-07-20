@@ -15,10 +15,10 @@ export default Ember.Route.extend({
   },
   //Loads category model then load its associations
   model() {
-    //refreshing pages will not load dishes
-    return this.store.findAll('category', { reload: true });
+    //refreshing pages will not load dishes******************************************
+    return this.store.findAll('category', { async: true });
   },
-  
+
   actions: {
     //DATA LOGIC/////////////////////////////////
     saveDish (data){
@@ -54,6 +54,7 @@ export default Ember.Route.extend({
       });
     },
     deleteDish(data){
+      console.log("route delete");
       data.destroyRecord()
       .then(() => {
         Materialize.toast('Delete success', 3000, 'rounded');

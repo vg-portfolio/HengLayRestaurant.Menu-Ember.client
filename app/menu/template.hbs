@@ -1,5 +1,11 @@
-{{all-dishes
+{{menu-nav
   categories=model
   editItem=(route-action "editDish")
   deleteItem=(route-action "deleteDish")
   saveItem=(route-action "saveDish") }}
+
+<!--FAB to add menu item and categories////////////////-->
+{{admin-tools/fab-add
+  saveItem=attrs.saveItem
+  categories=categories }}
+<!--./FAB to add menu item and categories-->
