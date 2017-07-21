@@ -11,7 +11,9 @@
   <div class="col s12 m8">
     {{#each filteredCategory as |f|}}
       {{dishes-list filteredCategory=f
-        deleteItem=attrs.deleteItem }}
+        editItem=attrs.editItem
+        deleteItem=attrs.deleteItem
+        categories=categories}}
     {{/each}}
   </div>
 </div>
