@@ -4,10 +4,14 @@ import RSVP from 'rsvp';
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
 
-  beforeModel() {
-    //check if user is already logged in. If yes transition to index
-  },
+  isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
 
+  beforeModel() {
+    if ((this.get('isAuthenticated'))) {
+      console.log("SIGNIN");
+      this.transitionTo('index');
+    }
+  },
   model () {
     return RSVP.Promise.resolve({});
   },
