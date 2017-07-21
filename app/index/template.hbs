@@ -4,9 +4,7 @@
   deleteItem=(route-action "deleteDish") }}
 
 <!--FAB to add menu item and categories////////////////-->
-{{#if isAuthenticated}}
 {{admin-tools/fab-add
   saveItem=(route-action "saveDish")
   categories=categories }}
-{{/if}}
 <!--./FAB to add menu item and categories-->

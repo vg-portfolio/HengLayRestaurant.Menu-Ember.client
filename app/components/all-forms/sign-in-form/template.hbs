@@ -1,10 +1,16 @@
-{{input-fields/email-input email=credentials.email}}
-{{input-fields/password-input password=credentials.password}}
 
-<button type="submit" class="btn btn-primary" {{action "submit"}}>
-  Sign In
-</button>
-
-<button class="btn btn-default" {{action "reset"}}>
-  Cancel
-</button>
+{{#md-card title="Heng Lay Menu" id="sign-in-card" class="center-align"}}
+    {{#md-card-content}}
+      <h5 class="center-align">151 Liberty Street Lowell, MA 01851</h5>
+      {{input-fields/email-input email=credentials.email}}
+      {{input-fields/password-input password=credentials.password}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+    <button type="submit" class="btn btn-primary" {{action "submit"}}>
+      Sign In
+    </button>
+    <button class="btn btn-default" {{action "reset"}}>
+      Cancel
+    </button>
+    {{/md-card-action}}
+{{/md-card}}
