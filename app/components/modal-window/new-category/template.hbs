@@ -1,34 +1,18 @@
 
-{{#md-modal close='closeModal' class="new-item-modal"}}
-    <div class="modal-content">
-      <!--Admin controls -->
-      {{#md-card-panel class="teal center-align"
-          bodyClass="white-text"
-          id="card-panel"}}
-              <button class="btn" type="button" name="button" {{action "addNewItem"}}>+ Menu Item</button>
-              <button class="btn" type="button" name="button" {{action "addNewCategory"}}>+ Category</button>
-      {{/md-card-panel}}
+{{#md-modal close='closeModal' class="new-category-modal"}}
+    <!--Add category card-->
+    {{#md-card title="Add new category" id="new-category-card" class="modal-card"}}
+        {{#md-card-content}}
+            <div class="row">
+              {{md-input value=data.categoryType label='Menu category' class="col s12 m6" validate=true}}
+              {{md-input value=data.categoryTypeKhmer label='Khmer Name' class="col s12 m6" validate=true}}
+            </div>
+        {{/md-card-content}}
+        {{#md-card-action class="right-align"}}
+            <button class="btn" type="button" name="button" {{action "saveNewCategory"}}>Save</button>
+            <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
+        {{/md-card-action}}
+    {{/md-card}}
+    <!--/.Add category card-->
 
-      {{#if showNewItemForm}}
-        {{all-forms/add-dish saveDish="saveDish"}}
-      {{/if}}
-
-      {{#if showNewCategoryForm}}
-        {{add-forms/add-category saveCategory="saveCategory"}}
-      {{/if}}
-
-      {{!-- <h3>Admin Panel</h3>
-      {{#each model as |category|}}
-        <li>{{category.categoryType}}</li>
-      {{/each}} --}}
-
-    </div>
-    <div class="modal-footer">
-        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'agree'}}>
-            Done!
-        </a>
-        <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
-            Cancel
-        </a>
-    </div>
 {{/md-modal}}

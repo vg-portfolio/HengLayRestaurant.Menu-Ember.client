@@ -15,7 +15,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    //DATA LOGIC/////////////////////////////////
+    //DISH DATA LOGIC/////////////////////////////////
     saveDish (data){
       let item = this.store.createRecord('dish', data);
       //Need to dynamically load category
@@ -56,6 +56,34 @@ export default Ember.Route.extend({
       })
       .catch(() => {
         Materialize.toast('Could not delete', 3000, 'rounded');
+      });
+    },
+    //.....END DISH DATA LOGIC/////////////////////////////////
+
+    //CATEGORY DATA LOGIC/////////////////////////////////
+    saveCategory (data){
+      let category = this.store.createRecord('category', data);
+      console.log(category);
+      return category.save()
+      .then(() => {
+        Materialize.toast('New category added', 3000, 'rounded');
+      })
+      .catch(() =>{
+        //Add toast to indicate to user that there was an error
+        category.rollbackAttributes();
+        Materialize.toast('Try again', 3000, 'rounded');
+      });
+    },
+    editCategory(data){
+      let category = this.store.peekRecord('category', data.category_id);
+      console.log(category);
+      category.set(data);
+      category.save()
+      .then(() => {
+        Materialize.toast('Update success', 3000, 'rounded');
+      })
+      .catch(() => {
+        Materialize.toast('Unable to update', 3000, 'rounded');
       });
     },
   },
