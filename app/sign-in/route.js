@@ -11,7 +11,7 @@ export default Ember.Route.extend({
   actions: {
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
-      .then(() => this.transitionTo('menu'))
+      .then(() => this.transitionTo('index'))
       .then(() => Materialize.toast('Welcome back!', 3000, 'rounded'))
       .catch(() => {
         Materialize.toast('Please make sure your username and password are correct', 3000, 'rounded');

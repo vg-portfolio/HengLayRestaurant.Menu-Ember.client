@@ -3,7 +3,6 @@
   <!-- A workaround to get the "active" class
     to apply to the active <li> automatically -->
   {{#if isAuthenticated}}
-    {{#link-to "menu"}}Update{{/link-to}}
       <button class="btn" type="button" name="button" {{action "signOut"}}>Sign Out</button>
     {{else}}
     <!--Remove before production-->
