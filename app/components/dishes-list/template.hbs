@@ -1,10 +1,11 @@
 <!--Toggle category buttons-->
 <div class="card-panel center-align">
   {{filteredCategory.categoryType}}
+  <br>
   {{filteredCategory.categoryTypeKhmer}}
 </div>
 
-<!--Collection of menu items////////////////-->
+<!--Collection of menu items that belongs to the filtered category////////////////-->
 <ul class="collection">
   {{#each filteredCategory.dishes as |dish|}}
   <li class="collection-item">

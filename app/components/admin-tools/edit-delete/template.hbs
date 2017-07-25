@@ -1,14 +1,19 @@
+<!-- THIS COMPONENT IS RESPONSIBLE FOR DECIDING WHETHER TO DISPLAY EDIT MODAL OR DELETE MODAL FOR CATEGORY OR DISH -->
+<!--
+  editName: Pass the name of the form for edit functionalities
+  deleteName: Pass the name of the form for delete functionalities
+-->
 <a class="btn" {{action "showDelete"}}><i class="material-icons">delete</i></a>
 <a class="btn" {{action "showEdit"}}><i class="material-icons">edit</i></a>
 
 <!--Shows edit modal-->
 {{#if showEditModal}}
 {{#md-modal close='closeEdit' class="edit-modal"}}
-{{component editName
-  dish=dish
-  editItem=attrs.editItem
-  categories=categories
-  closeModal="closeEdit"  }}
+    {{component editName
+      dish=dish
+      editItem=attrs.editItem
+      categories=categories
+      closeModal="closeEdit"  }}
 {{/md-modal}}
 {{/if}}
 
