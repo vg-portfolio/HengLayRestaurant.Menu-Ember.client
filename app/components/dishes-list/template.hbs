@@ -18,6 +18,8 @@
       <!--Display admin buttons if user is authenticated-->
       {{#if isAuthenticated}}
         {{admin-tools/edit-delete
+          editName='all-forms/edit-dish'
+          deleteName='all-forms/delete-dish'
           deleteItem=attrs.deleteItem
           editItem=attrs.editItem
           dish=dish

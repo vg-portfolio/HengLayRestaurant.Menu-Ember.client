@@ -1,0 +1,21 @@
+
+{{#md-modal close='closeModal' class="edit-category-modal"}}
+  <!--Add category card-->
+  {{#md-card title="All categories" id="new-category-card" class="modal-card"}}
+      {{#md-card-content}}
+        {{#each categories as |category|}}
+          {{category.categoryType}}
+            {{admin-tools/edit-delete
+              deleteItem=attrs.deleteItem
+              editItem=attrs.editItem
+              dish=dish
+              categories=categories}}
+        {{/each}}
+      {{/md-card-content}}
+      {{#md-card-action class="right-align"}}
+
+      {{/md-card-action}}
+  {{/md-card}}
+  <!--/.Add category card-->
+
+{{/md-modal}}

@@ -1,21 +1,21 @@
 <a class="btn" {{action "showDelete"}}><i class="material-icons">delete</i></a>
 <a class="btn" {{action "showEdit"}}><i class="material-icons">edit</i></a>
 
-<!--Shows edit dish modal-->
+<!--Shows edit modal-->
 {{#if showEditModal}}
 {{#md-modal close='closeEdit' class="edit-modal"}}
-    {{all-forms/edit-dish
-      dish=dish
-      editItem=attrs.editItem
-      categories=categories
-      closeModal="closeEdit"}}
+{{component editName
+  dish=dish
+  editItem=attrs.editItem
+  categories=categories
+  closeModal="closeEdit"  }}
 {{/md-modal}}
 {{/if}}
 
-<!--Shows delete dish modal-->
+<!--Shows delete modal-->
 {{#if showDeleteModal}}
 {{#md-modal close='closeDelete' class="edit-modal"}}
-    {{all-forms/delete-dish
+    {{component deleteName
       dish=dish
       deleteItem=attrs.deleteItem }}
 {{/md-modal}}

@@ -8,6 +8,10 @@ export default Ember.Component.extend({
   },
 
   actions: {
+    showAllCategory(){
+      this.sendAction(this.get('showEditCategoryModal'));
+      this.toggleProperty('isModalShown');
+    },
     closeModal(){
       this.toggleProperty('isModalShown');
     },

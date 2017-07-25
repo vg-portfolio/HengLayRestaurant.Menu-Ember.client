@@ -3,9 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
-  
+
   isItemModalShown: false,
   isCategoryModalShown: false,
+  isEditCategoryShown: false,
 
   actions: {
     showItemModal(){
@@ -14,8 +15,9 @@ export default Ember.Component.extend({
     showCategoryModal(){
       this.toggleProperty('isCategoryModalShown');
     },
-    // saveDish(dish){
-    //   this.sendAction("saveDish", dish);
-    // },
+    showEditCategoryModal(){
+      this.toggleProperty('isEditCategoryShown');
+      console.log(this.get('isEditCategoryShown'));
+    }
   },
 });
