@@ -1,11 +1,6 @@
-.modal-card {
-  margin: 0 auto;
+.card-panel {
+  margin-bottom: 0;
 }
-
-@media screen and (max-width: 600px) {
-  .modal.show {
-    width: 100% !important;
-    min-height: 100% !important;
-    top: -50px;
-  }
+.collection{
+  margin-top: 0;
 }
