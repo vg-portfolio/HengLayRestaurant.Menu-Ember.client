@@ -10,3 +10,6 @@
 .show-all-button{
   margin: 1rem auto;
 }
+.modal.show{
+  top: 0 !important;
+}
