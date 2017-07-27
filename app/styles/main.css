@@ -4,3 +4,9 @@
 .collection{
   margin-top: 0;
 }
+.filter-buttons > button{
+  width: 100%;
+}
+.show-all-button{
+  margin: 1rem auto;
+}
