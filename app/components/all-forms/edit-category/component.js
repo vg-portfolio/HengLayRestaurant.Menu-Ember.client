@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    closeModal(){
+    editCategory(category){
+      this.attrs.editCategory(category);
       this.sendAction('close');
     }
   }

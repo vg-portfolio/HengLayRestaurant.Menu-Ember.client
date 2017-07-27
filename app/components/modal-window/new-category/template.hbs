@@ -1,4 +1,4 @@
-
+<!-- NEW CATEGORY MODAL -->
 {{#md-modal close='closeModal' class="new-category-modal"}}
     <!--Add category card-->
     {{#md-card title="Add new category" id="new-category-card" class="modal-card"}}
@@ -9,11 +9,21 @@
             </div>
         {{/md-card-content}}
         {{#md-card-action class="right-align"}}
-            <a href="#" {{action "showAllCategory"}}>Show Categories</a>
+            <a href="#" {{action "toggleAllCategoryModal"}}>Show Categories</a>
             <button class="btn" type="button" name="button" {{action "saveNewCategory"}}>Save</button>
             <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
         {{/md-card-action}}
     {{/md-card}}
     <!--/.Add category card-->
-
 {{/md-modal}}
+
+
+<!--Opens modal to edit/delete existing category-->
+{{#if isEditCategoryShown}}
+  {{modal-window/edit-category
+    close="toggleAllCategoryModal"
+    isModalShown=isEditCategoryShown
+    categories=categories
+    editCategory=attrs.editCategory
+    deleteCategory=attrs.deleteCategory }}
+{{/if}}

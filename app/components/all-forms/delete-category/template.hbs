@@ -1,0 +1,16 @@
+<!--Add item card-->
+{{#md-card title="Delete this category?" class="modal-card"}}
+    {{#md-card-content}}
+      <div class="container center-align">
+        <h5>{{category.categoryType}}</h5>
+        <h6>{{category.categoryTypeKhmer}}</h6>
+      </div>
+    {{/md-card-content}}
+    {{#md-card-action class="right-align"}}
+        <button class="btn red" type="button" name="button" {{action "delete" category}}>
+          Delete
+        </button>
+        <button class="btn" type="button" name="button" {{action "cancel"}}>Cancel</button>
+    {{/md-card-action}}
+{{/md-card}}
+<!--/.Add item card-->

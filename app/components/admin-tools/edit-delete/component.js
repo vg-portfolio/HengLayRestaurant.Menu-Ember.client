@@ -21,9 +21,11 @@ export default Ember.Component.extend({
     },
     showDelete(){
       this.toggleProperty('showDeleteModal');
+      console.log("show delete");
     },
     closeDelete(){
       this.toggleProperty('showDeleteModal');
+      console.log("close delete");
     },
   }
 });

@@ -75,10 +75,9 @@ export default Ember.Route.extend({
       });
     },
     editCategory(data){
-      let category = this.store.peekRecord('category', data.category_id);
-      console.log(category);
-      category.set(data);
-      category.save()
+      // let category = this.store.peekRecord('category', data.category_id);
+  
+      data.save()
       .then(() => {
         Materialize.toast('Update success', 3000, 'rounded');
       })
@@ -86,5 +85,14 @@ export default Ember.Route.extend({
         Materialize.toast('Unable to update', 3000, 'rounded');
       });
     },
+    deleteCategory(data){
+       data.destroyRecord()
+      .then(() => {
+        Materialize.toast('Delete successful', 3000, 'rounded');
+      })
+      .catch(() => {
+        Materialize.toast('Unable to delete', 3000, 'rounded');
+      });
+    }
   },
 });

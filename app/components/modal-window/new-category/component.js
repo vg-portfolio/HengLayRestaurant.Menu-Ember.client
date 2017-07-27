@@ -3,17 +3,20 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   data: {},
 
+  isEditCategoryShown: false,
+
   didInsertElement(){
     this.set('data', {});
   },
 
   actions: {
-    showAllCategory(){
-      this.sendAction(this.get('showEditCategoryModal'));
-      this.toggleProperty('isModalShown');
+    toggleAllCategoryModal(){
+      this.toggleProperty('isEditCategoryShown');
+      console.log("new cate component");
     },
     closeModal(){
       this.toggleProperty('isModalShown');
+      console.log("close MOdal");
     },
     saveNewCategory: function(){
       this.attrs.saveCategory(this.get('data'));

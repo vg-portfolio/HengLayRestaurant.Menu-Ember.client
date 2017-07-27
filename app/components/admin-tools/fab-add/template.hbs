@@ -1,3 +1,4 @@
+<!-- Floating action button responsible for opening modals -->
 {{#if isAuthenticated}}
   <div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; right: 24px;">
     <!--Main FAB with view-day icon-->
@@ -6,12 +7,21 @@
     </a>
     <!--Nested buttons-->
     <ul>
-      <li {{action "showItemModal"}}><a class="btn-floating green"><i class="material-icons">playlist_add</i><i class="material-icons">playlist_add</i></a></li>
-      <li {{action "showCategoryModal"}}><a class="btn-floating yellow darken-1"><i class="material-icons">library_add</i></a></li>
+      <li {{action "showItemModal"}}>
+        <a class="btn-floating">
+          <i class="material-icons">playlist_add</i>
+        </a>
+      </li>
+      <li {{action "toggleCategoryModal"}}>
+        <a class="btn-floating darken-1">
+          <i class="material-icons">library_add</i>
+        </a>
+      </li>
     </ul>
   </div>
 {{/if}}
 
+  <!--Opens modal to add new items -->
   {{#if isItemModalShown}}
     {{modal-window/new-item
       isModalShown=isItemModalShown
@@ -19,14 +29,12 @@
       categories=categories }}
   {{/if}}
 
+  <!--Opens modal to add new category -->
   {{#if isCategoryModalShown}}
     {{modal-window/new-category
-      isModalShown=isCategoryModalShown
       saveCategory=attrs.saveCategory
-      showEditCategoryModal="showEditCategoryModal"}}
-  {{/if}}
-
-  {{#if isEditCategoryShown}}
-    {{modal-window/edit-category
-      categories=categories }}
+      deleteCategory=attrs.deleteCategory
+      editCategory=attrs.editCategory
+      categories=categories
+      isModalShown=isCategoryModalShown }}
   {{/if}}

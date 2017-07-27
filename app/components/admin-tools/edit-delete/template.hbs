@@ -11,17 +11,21 @@
 {{#md-modal close='closeEdit' class="edit-modal"}}
     {{component editName
       dish=dish
+      category=category
       editItem=attrs.editItem
+      editCategory=attrs.editCategory
       categories=categories
-      closeModal="closeEdit"  }}
+      close="closeEdit"}}
 {{/md-modal}}
 {{/if}}
 
 <!--Shows delete modal-->
 {{#if showDeleteModal}}
-{{#md-modal close='closeDelete' class="edit-modal"}}
+{{#md-modal close='closeDelete' class="delete-modal"}}
     {{component deleteName
       dish=dish
-      deleteItem=attrs.deleteItem }}
+      deleteCategory=attrs.deleteCategory
+      deleteItem=attrs.deleteItem
+      category=category }}
 {{/md-modal}}
 {{/if}}
