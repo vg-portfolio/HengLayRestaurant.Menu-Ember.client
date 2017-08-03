@@ -1,33 +1,34 @@
 <!--Toggle category buttons-->
 <div class="card-panel center-align">
-  {{filteredCategory.categoryType}}
-  <br>
-  {{filteredCategory.categoryTypeKhmer}}
+  <h5 class="category-type">{{filteredCategory.categoryType}}</h5>
+  <h6 class="category-khmer">{{filteredCategory.categoryTypeKhmer}}</h6>
 </div>
 
 <!--Collection of menu items that belongs to the filtered category////////////////-->
-<ul class="collection">
+<div class="row">
   {{#each filteredCategory.dishes as |dish|}}
-  <li class="collection-item">
-    <div>
-      <span class="title">{{dish.name}}</span>
-      <span class="khmer-title">{{dish.khmerName}}</span>
-      <span class="secondary-content"><i class="">{{dish.price}}</i></span>
-      <p>{{dish.description}} <br>
-        Second Line
-      </p>
-      <!--Display admin buttons if user is authenticated-->
-      {{#if isAuthenticated}}
-        {{admin-tools/edit-delete
-          editName='all-forms/edit-dish'
-          deleteName='all-forms/delete-dish'
-          deleteItem=attrs.deleteItem
-          editItem=attrs.editItem
-          dish=dish
-          categories=categories}}
-      {{/if}}
-    </div>
-  </li>
-  {{/each}}
-</ul>
-<!--/.Collection of menu items-->
+   <div class="col s12 menu-item">
+     <div class="card-panel hoverable">
+       <div class="row">
+         <div class="col s12 item-content">
+           <h5 class="title item-title">{{dish.name}}
+             <span class="secondary-content item-price">{{format-money dish.price symbol=selectedCurrency format="%s %v"}}</span>
+           </h5>
+           <h6 class="item-khmer-title">{{dish.khmerName}}</h6>
+           <p>{{dish.description}}</p>
+         </div>
+       </div><!--/.row-->
+       <!--Display admin buttons if user is authenticated-->
+       {{#if isAuthenticated}}
+         {{admin-tools/edit-delete
+           editName='all-forms/edit-dish'
+           deleteName='all-forms/delete-dish'
+           deleteItem=attrs.deleteItem
+           editItem=attrs.editItem
+           dish=dish
+           categories=categories}}
+       {{/if}}
+     </div>
+   </div>
+   {{/each}}
+ </div>

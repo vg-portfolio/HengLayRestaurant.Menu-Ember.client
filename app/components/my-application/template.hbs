@@ -1,18 +1,46 @@
-<!--NAVBAR//////////////////////////-->
-{{#md-navbar name='HengLay' class='red darken-2'}}
-  <!-- A workaround to get the "active" class
-    to apply to the active <li> automatically -->
-  {{#if isAuthenticated}}
-      <button class="btn" type="button" name="button" {{action "signOut"}}>Sign Out</button>
-    {{else}}
-    <!--Remove before production-->
-      {{#link-to 'sign-in' tagName='li'}}
-        {{link-to 'Sign In' 'sign-in'}}
-      {{/link-to}}
-    <!--/.Remove before production-->
-  {{/if}}
-{{/md-navbar}}
-<!--./NAVBAR//////////////////////////-->
+
+<div class="main-navbar navbar-fixed">
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">
+        <img id="navbar-logo"src="assets/images/navbar-logo.png" alt="">
+      </a>
+      <!-- Call button for desktop screen -->
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a class="btn align-right" href="tel:9784584619" name="button">Order now (978)458-4619</a>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- Call button for small and medium screen -->
+<div class="row call-button hide-on-large-only">
+    <a class="btn right" href="tel:9784584619" name="button">Order now (978)458-4619</a>
+</div>
+
+
+{{!-- <!--NAVBAR//////////////////////////-->
+<nav class="navbar">
+  <div class="nav-wrapper">
+<!--Navbar logo-->
+    <a class="navbar-brand" href="#">
+      <img id="navbar-logo"src="assets/images/navbar-logo.png" alt="">
+    </a>
+    <ul class="right hide-on-med-and-down">
+      {{#if isAuthenticated}}
+          <button class="btn" type="button" name="button" {{action "signOut"}}>Sign Out</button>
+        {{else}}
+        <a class="btn call-button" href="tel:9784584619"name="button">(978) 458-4619</a>
+        <!--Remove before production-->
+          {{#link-to 'sign-in' tagName='li'}}
+            {{link-to 'Sign In' 'sign-in'}}
+          {{/link-to}}
+        <!--/.Remove before production-->
+      {{/if}}
+    </ul>
+  </div>
+</nav> --}}
+
+
 
 
 {{#each flashMessages.queue as |flash|}}

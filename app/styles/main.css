@@ -1,3 +1,23 @@
+body{
+  background-color: #e0e0e0;
+}
+.main-navbar{
+  height: 6em;
+}
+.navbar{
+  height: 5.5em;
+  padding: 1em;
+}
+#navbar-logo {
+  width: 12rem;
+  height: auto;
+}
+
+.call-button {
+  position: fixed;
+  right: 0;
+}
+
 .card-panel {
   margin-bottom: 0;
 }
@@ -12,4 +32,11 @@
 }
 .modal.show{
   top: 0 !important;
+}
+
+
+@media (max-width: 320px) {
+  .card-panel .item-title{
+
+  }
 }

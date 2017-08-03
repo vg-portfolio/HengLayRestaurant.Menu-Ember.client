@@ -4,22 +4,17 @@
         <div class="row">
           {{md-input value=data.name label='Menu item' class="col s12 m6" validate=true}}
           {{md-input value=data.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
-        </div>
-        <div class="row">
           {{md-input value=data.price label='Price' class="col s12 m4" validate=true}}
-<!--To do: Pass category down to route to save relationship-->
+          <!--To do: Pass category down to route to save relationship-->
           {{md-select content=categories
             value=data.category
             label="Category"
             prompt="Category"
             optionLabelPath="content.categoryType"
             optionValuePath="content.id" class="col s12 m8"}}
+            {{md-textarea label='Description'
+              value=data.description class="col s12"}}
         </div>
-        <div class="row">
-          {{md-textarea label='Description'
-            value=data.description class="col s12"}}
-        </div>
-
     {{/md-card-content}}
     {{#md-card-action class="right-align"}}
         <button class="btn" type="button" name="button" {{action "saveNewItem"}}>Save</button>
