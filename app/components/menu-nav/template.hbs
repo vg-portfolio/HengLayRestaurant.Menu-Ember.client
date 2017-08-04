@@ -21,6 +21,7 @@
 </div>
 <!--//.row-->
 
+<!-- FAB to open filter modal on small screens-->
 <div class="hide-on-med-and-up">
   <div class="fixed-action-btn">
     <a class="btn-floating btn-large red" {{action "showFilter"}}>
@@ -28,6 +29,7 @@
     </a>
   </div>
 </div>
+<!-- //.FAB to open filter modal on small screens-->
 
 {{#if isFilterModalShown}}
   {{modal-window/filterModal
