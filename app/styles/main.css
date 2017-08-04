@@ -21,9 +21,6 @@ body{
 .card-panel {
   margin-bottom: 0;
 }
-.collection{
-  margin-top: 0;
-}
 .filter-buttons > button{
   width: 100%;
 }
@@ -33,6 +30,18 @@ body{
 .modal.show{
   top: 0 !important;
 }
+
+/*
+FAB BUTTON
+*/
+.signout-button{
+  border-radius: 100px;
+  margin: 0 auto;
+}
+ul.floating-action-list{
+  width: 50em;
+}
+
 
 
 @media (max-width: 320px) {
