@@ -1,5 +1,8 @@
 {{#md-modal close='closeModal' class="filter-category-modal"}}
   <!--Add category card-->
+  <div class='collection-item' {{action 'filter' null}}>
+    <h5 class="center-align">SHOW ALL</h5>
+  </div>
   {{#md-collection content=categories as |category|}}
     <div class='collection-item' {{action 'filter' category.categoryType}}>
       <h5 class="center-align">{{category.categoryType}}</h5>

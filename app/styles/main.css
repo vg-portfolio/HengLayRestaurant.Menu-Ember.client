@@ -1,5 +1,6 @@
 body{
   background-color: #e0e0e0;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/assets/images/gallery.jpg');
 }
 .main-navbar{
   height: 6em;
@@ -63,7 +64,14 @@ Category Filter buttons
   margin: 1.5rem auto;
 }
 
+/*
+Fonts
+*/
 
+.category-type{
+  font-weight: bolder;
+  color: white;
+}
 
 
 @media (max-width: 450px) {
