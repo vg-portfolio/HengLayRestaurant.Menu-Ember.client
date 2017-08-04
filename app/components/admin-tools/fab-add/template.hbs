@@ -1,27 +1,30 @@
 <!-- Floating action button responsible for opening modals -->
 {{#if isAuthenticated}}
-  <div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; right: 24px;">
+  <div class="fixed-action-btn vertical click-to-toggle">
     <!--Main FAB with view-day icon-->
     <a class="btn-floating btn-large red">
-      <i class="large material-icons">view_day</i>
+      <i id="admin-tool-fab" class="large material-icons">view_day</i>
     </a>
     <!--Nested buttons-->
     <div class="row">
-      <ul class="floating-action-list col s12">
+      <ul class="nested-fab-list">
         <li {{action "showItemModal"}}>
           <a class="btn-floating">
-            <i class="material-icons">playlist_add</i>
+            {{!-- <i class="material-icons left">playlist_add</i> --}}
+            Add Dishes
           </a>
         </li>
         <li {{action "toggleCategoryModal"}}>
-          <a class="btn-floating darken-1">
-            <i class="material-icons">library_add</i>
+          <a class="btn-floating">
+            Add Category
+            {{!-- <i class="material-icons right">library_add</i> --}}
           </a>
         </li>
-        <li>
-          <button class="btn signout-button">
-            <p>Sign out</p>
-          </button>
+        <li {{action "signOut"}}>
+          <a class="signout-button btn-floating">
+            {{!-- <i class="material-icons right">exit</i> --}}
+            Sign out
+          </a>
         </li>
       </ul>
     </div>

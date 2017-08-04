@@ -34,18 +34,30 @@ body{
 /*
 FAB BUTTON
 */
-.signout-button{
+.fixed-action-btn {
+  ul{
+    left: auto;
+    right: 0;
+    margin-bottom: 1rem;
+  }
+  a {
+    width: 10rem;
+  }
+}
+.nested-fab-list > li > a {
   border-radius: 100px;
-  margin: 0 auto;
+  margin-right: 0;
 }
-ul.floating-action-list{
-  width: 50em;
+.signout-button{
+  margin-top: 1rem;
+}
+li.add-category{
+  display: inline-block;
 }
 
 
-
-@media (max-width: 320px) {
-  .card-panel .item-title{
-
+@media (max-width: 450px) {
+  .application-outlet{
+    margin-top: 3rem;
   }
 }

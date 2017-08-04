@@ -17,36 +17,10 @@
     <a class="btn right" href="tel:9784584619" name="button">Order now (978)458-4619</a>
 </div>
 
-
-{{!-- <!--NAVBAR//////////////////////////-->
-<nav class="navbar">
-  <div class="nav-wrapper">
-<!--Navbar logo-->
-    <a class="navbar-brand" href="#">
-      <img id="navbar-logo"src="assets/images/navbar-logo.png" alt="">
-    </a>
-    <ul class="right hide-on-med-and-down">
-      {{#if isAuthenticated}}
-          <button class="btn" type="button" name="button" {{action "signOut"}}>Sign Out</button>
-        {{else}}
-        <a class="btn call-button" href="tel:9784584619"name="button">(978) 458-4619</a>
-        <!--Remove before production-->
-          {{#link-to 'sign-in' tagName='li'}}
-            {{link-to 'Sign In' 'sign-in'}}
-          {{/link-to}}
-        <!--/.Remove before production-->
-      {{/if}}
-    </ul>
-  </div>
-</nav> --}}
-
-
-
-
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
 
-<div class=" container-fluid">
+<div class="application-outlet container-fluid">
     {{outlet}}
 </div>
