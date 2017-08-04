@@ -8,6 +8,9 @@ export default Ember.Component.extend({
   isCategoryModalShown: false,
 
   actions: {
+    signOut: function(){
+      this.attrs.signOut();
+    },
     showItemModal(){
       this.toggleProperty('isItemModalShown');
     },

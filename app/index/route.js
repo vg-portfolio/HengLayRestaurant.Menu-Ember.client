@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  auth: Ember.inject.service(),
+
   model() {
     return Ember.RSVP.hash({
       dishes: this.store.findAll('dish'),
@@ -15,6 +17,17 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    signOut () {
+      this.get('auth').signOut()
+        // .then(() => this.get('store').unloadAll())
+        .then(() => this.transitionTo('index'))
+        .then(() => {
+          Materialize.toast('You are signed out', 3000, 'rounded');
+        })
+        .catch(() => {
+          Materialize.toast('Sign out failed', 3000, 'rounded');
+        });
+    }, //signOut
     //DISH DATA LOGIC/////////////////////////////////
     saveDish (data){
       let item = this.store.createRecord('dish', data);
@@ -76,7 +89,7 @@ export default Ember.Route.extend({
     },
     editCategory(data){
       // let category = this.store.peekRecord('category', data.category_id);
-  
+
       data.save()
       .then(() => {
         Materialize.toast('Update success', 3000, 'rounded');
