@@ -21,12 +21,6 @@ body{
 .card-panel {
   margin-bottom: 0;
 }
-.filter-buttons > button{
-  width: 100%;
-}
-.show-all-button{
-  margin: 1rem auto;
-}
 .modal.show{
   top: 0 !important;
 }
@@ -54,6 +48,22 @@ FAB BUTTON
 li.add-category{
   display: inline-block;
 }
+
+
+/*
+Category Filter buttons
+*/
+.category-button {
+  margin-bottom: 0.5rem;
+}
+.filter-buttons > button{
+  width: 100%;
+}
+.show-all-button{
+  margin: 1.5rem auto;
+}
+
+
 
 
 @media (max-width: 450px) {
