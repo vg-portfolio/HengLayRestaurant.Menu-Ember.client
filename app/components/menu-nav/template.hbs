@@ -20,3 +20,19 @@
   </div>
 </div>
 <!--//.row-->
+
+<div class="hide-on-med-and-up">
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" {{action "showFilter"}}>
+      <i class="large material-icons">mode_edit</i>
+    </a>
+  </div>
+</div>
+
+{{#if isFilterModalShown}}
+  {{modal-window/filterModal
+    categories=categories
+    filter="filter"
+    showFilter="showFilter"
+    }}
+{{/if}}

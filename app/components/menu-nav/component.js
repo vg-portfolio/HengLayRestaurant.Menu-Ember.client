@@ -6,6 +6,8 @@ export default Ember.Component.extend({
 
   type: null,
 
+  isFilterModalShown: false,
+
   filteredCategory: function(){
     if(this.get('type') === null){
       return this.get('allCategories');
@@ -18,5 +20,8 @@ export default Ember.Component.extend({
     filter(cat){
       this.set('type', cat);
     },
+    showFilter(){
+      this.toggleProperty('isFilterModalShown');
+    }
   }
 });

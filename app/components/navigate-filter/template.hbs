@@ -1,0 +1,18 @@
+<div class="fixed-action-btn vertical click-to-toggle">
+  <!--Main FAB with view-day icon-->
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">view_day</i>
+  </a>
+  <!--Nested buttons-->
+  <div class="row">
+    <ul class="nested-fab-list">
+      {{#each categories as |cat|}}
+        <li {{action 'filter' cat.categoryType}}>
+          <a class="btn-floating">
+            {{cat.categoryType}}
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
