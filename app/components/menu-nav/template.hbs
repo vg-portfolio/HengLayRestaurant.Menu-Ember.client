@@ -22,13 +22,15 @@
 <!--//.row-->
 
 <!-- FAB to open filter modal on small screens-->
+{{#if (not isAuthenticated)}}
 <div class="hide-on-med-and-up">
   <div class="fixed-action-btn">
     <a class="btn-floating btn-large red" {{action "showFilter"}}>
-      <i class="large material-icons">mode_edit</i>
+      <i id="filter-button" class="large material-icons">view_day</i>
     </a>
   </div>
 </div>
+{{/if}}
 <!-- //.FAB to open filter modal on small screens-->
 
 {{#if isFilterModalShown}}

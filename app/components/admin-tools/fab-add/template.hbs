@@ -3,23 +3,32 @@
   <div class="fixed-action-btn vertical click-to-toggle">
     <!--Main FAB with view-day icon-->
     <a class="btn-floating btn-large red">
-      <i id="admin-tool-fab" class="large material-icons">view_day</i>
+      <i id="admin-tool-fab" class="large material-icons">edit</i>
     </a>
     <!--Nested buttons-->
     <div class="row">
       <ul class="nested-fab-list">
+        <!--Click to show category list and filters dishes-->
+        {{!-- <li {{action "showFilter"}}>
+          <a class="btn-floating">
+            View Dishes
+          </a>
+        </li> --}}
+        <!-- Click to show new dish form -->
         <li {{action "showItemModal"}}>
           <a class="btn-floating">
             {{!-- <i class="material-icons left">playlist_add</i> --}}
             Add Dishes
           </a>
         </li>
+        <!-- Click to show new category form -->
         <li {{action "toggleCategoryModal"}}>
           <a class="btn-floating">
             Add Category
             {{!-- <i class="material-icons right">library_add</i> --}}
           </a>
         </li>
+        <!-- Click to show sign out -->
         <li {{action "signOut"}}>
           <a class="signout-button btn-floating">
             {{!-- <i class="material-icons right">exit</i> --}}
@@ -28,7 +37,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 {{/if}}
 

@@ -29,6 +29,13 @@ body{
 /*
 FAB BUTTON
 */
+#admin-tool-fab{
+  background-color: $primary-color;
+}
+#filter-button {
+  background-color: $secondary-color;
+}
+
 .fixed-action-btn {
   ul{
     left: auto;
@@ -45,6 +52,7 @@ FAB BUTTON
 }
 .signout-button{
   margin-top: 1rem;
+  background-color: $primary-color-light;
 }
 li.add-category{
   display: inline-block;
