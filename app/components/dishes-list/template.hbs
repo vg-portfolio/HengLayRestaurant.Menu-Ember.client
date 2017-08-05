@@ -11,6 +11,9 @@
      <div class="card-panel hoverable">
        <div class="row">
          <div class="col s12 item-content">
+           {{#if dish.itemNumber}}
+           <h6>#{{dish.itemNumber}}</h6>
+           {{/if}}
            <h5 class="title item-title">{{dish.name}}
              <span class="secondary-content item-price">{{format-money dish.price symbol=selectedCurrency format="%s %v"}}</span>
            </h5>

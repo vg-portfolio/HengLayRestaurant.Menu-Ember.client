@@ -5,5 +5,6 @@ export default DS.Model.extend({
   khmerName: DS.attr('string'),
   description: DS.attr('string'),
   price: DS.attr('string'),
+  itemNumber: DS.attr('number'),
   category: DS.belongsTo('category'),
 });
