@@ -6,7 +6,7 @@ export default Ember.Component.extend({
     editItem(){
       //Calls action of editItem from route
       this.attrs.editItem(this.get('dish'));
-      this.sendAction('closeModal');
+      this.sendAction('close');
     },
   }
 });
