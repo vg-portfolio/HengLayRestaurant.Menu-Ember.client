@@ -4,6 +4,8 @@ export default Ember.Component.extend({
   auth: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
 
+  sortedDishes: Ember.computed.sort('filteredCategory.dishes', 'sortDefinition'),
+  sortDefinition: ['name:asc'],
   // type: null,
   // sorted: function(){
   //   if(this.get('type') === null){
