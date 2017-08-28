@@ -1,6 +1,9 @@
 <!--Toggle category buttons-->
 <div class="center-align">
-  <h5 class="category-type">{{filteredCategory.categoryType}} | {{filteredCategory.categoryTypeKhmer}}</h5>
+  <h5 class="category-type">{{filteredCategory.categoryType}}</h5>
+  {{#if filteredCategory.categoryTypeKhmer}}
+  <h5 class="category-type-khmer">{{filteredCategory.categoryTypeKhmer}}</h5>
+  {{/if}}
   {{!-- <h6 class="category-khmer">{{filteredCategory.categoryTypeKhmer}}</h6> --}}
 </div>
 

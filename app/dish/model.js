@@ -7,4 +7,5 @@ export default DS.Model.extend({
   price: DS.attr('string'),
   itemNumber: DS.attr('number'),
   category: DS.belongsTo('category'),
+  createdAt: DS.attr('date'),
 });
