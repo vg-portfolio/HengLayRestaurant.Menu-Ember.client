@@ -72,6 +72,9 @@ Category Filter buttons
 */
 .category-button {
   margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .filter-buttons > button{
   width: 100%;
@@ -88,7 +91,9 @@ Fonts
   font-weight: bolder;
   color: white;
 }
-
+.category-type-khmer{
+  color: white;
+}
 
 @media (max-width: 450px) {
   .application-outlet{
