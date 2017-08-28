@@ -19,6 +19,14 @@ body{
   right: 0;
 }
 
+.delete-button{
+  background-color: $error-color;
+}
+
+.cancel-button{
+  background-color: $disbaled-color;
+}
+
 .card-panel {
   margin-bottom: 0;
 }
