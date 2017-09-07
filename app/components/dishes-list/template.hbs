@@ -13,15 +13,28 @@
    <div class="col s12 menu-item">
      <div class="card-panel hoverable">
        <div class="row">
-         <div class="col s12 item-content">
+         <div class="col s8 m10 item-content">
            {{#if dish.itemNumber}}
            <h6>#{{dish.itemNumber}}</h6>
            {{/if}}
            <h5 class="title item-title">{{dish.name}}
-             <span class="secondary-content item-price">{{format-money dish.price symbol=selectedCurrency format="%s %v"}}</span>
            </h5>
            <h6 class="item-khmer-title">{{dish.khmerName}}</h6>
            <p>{{dish.description}}</p>
+         </div>
+         <div class="col s4 m2 item-content right-align">
+           {{#if dish.seasonal}}
+           <h5 class="item-price">Seasonal</h5>
+           {{else}}
+           <h5 class="item-price">{{format-money dish.price symbol=selectedCurrency format="%s %v"}}</h5>
+           {{#if dish.price2}}
+            <h5 class="item-price large-size">{{format-money dish.price2 symbol=selectedCurrency format="%s %v"}}</h5>
+            <p class="size-label">LARGE</p>
+           {{/if}}
+           {{!-- {{#if dish.price3}}
+            <h5 class="item-price">{{format-money dish.price3 symbol=selectedCurrency format="%s %v"}}</h5>
+           {{/if}} --}}
+           {{/if}}
          </div>
        </div><!--/.row-->
        <!--Display admin buttons if user is authenticated-->
