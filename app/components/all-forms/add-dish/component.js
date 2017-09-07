@@ -16,6 +16,7 @@ export default Ember.Component.extend({
 
     cancel: function(){
       this.set('data', {});
+      console.log("HIIII");
     },
 
     edit: function(){

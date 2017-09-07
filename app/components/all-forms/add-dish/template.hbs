@@ -5,13 +5,21 @@
           {{md-input value=data.name label='Menu item' class="col s12 m6" validate=true}}
           {{md-input value=data.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
           {{md-input value=data.price label='Price' class="col s12 m4" validate=true}}
+          <!--Additional prices-->
+          {{#if sizesChecked}}
+            {{md-input value=data.price2 label='Medium Price' class="col s12 m4" validate=true}}
+            {{md-input value=data.price3 label='Large Price' class="col s12 m4" validate=true}}
+          {{/if}}
+          <!--./additional prices-->
+          {{md-check name="More sizes" checked=sizesChecked class="col s6"}}
+          {{md-check name="Seasonal" checked=data.seasonal class="col s6"}}
           <!--To do: Pass category down to route to save relationship-->
           {{md-select content=categories
             value=data.category
             label="Category"
             prompt="Category"
             optionLabelPath="content.categoryType"
-            optionValuePath="content.id" class="col s12 m8"}}
+            optionValuePath="content.id" class="col s12"}}
             {{md-textarea label='Description'
               value=data.description class="col s12"}}
         </div>
