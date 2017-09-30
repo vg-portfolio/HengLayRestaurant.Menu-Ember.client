@@ -103,9 +103,6 @@ export default Ember.Route.extend({
       .then(() => {
         Materialize.toast('Delete successful', 3000, 'rounded');
       })
-      .then(() => {
-        this.transitionTo('index');
-      })
       .catch(() => {
         Materialize.toast('Unable to delete', 3000, 'rounded');
       });

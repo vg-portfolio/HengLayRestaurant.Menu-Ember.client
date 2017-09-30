@@ -5,11 +5,10 @@ export default DS.Model.extend({
   khmerName: DS.attr('string'),
   description: DS.attr('string'),
   price: DS.attr('string'),
+  itemNumber: DS.attr('number'),
   price2: DS.attr('string'),
   price3: DS.attr('string'),
-  sizeOption: DS.attr('boolean'),
   seasonal: DS.attr('boolean'),
-  itemNumber: DS.attr('number'),
+  sizeOption: DS.attr('boolean'),
   category: DS.belongsTo('category'),
-  createdAt: DS.attr('string'),
 });

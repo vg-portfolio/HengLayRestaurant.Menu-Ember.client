@@ -4,9 +4,16 @@
         <div class="row">
           {{md-input value=dish.name label='Menu item' class="col s12 m6" validate=true}}
           {{md-input value=dish.khmerName label='Khmer Name' class="col s12 m6" validate=true}}
-        </div>
-        <div class="row">
+
           {{md-input value=dish.price label='Price' class="col s12 m4" validate=true}}
+          <!--Additional prices-->
+          {{#if sizeOption}}
+            {{!-- {{md-input value=data.price2 label='Medium Price' class="col s12 m4" validate=true}} --}}
+            {{md-input value=data.price3 label='Large Price' class="col s12 m4" validate=true}}
+          {{/if}}
+          <!--./additional prices-->
+          {{md-check name="More sizes" checked=sizeOption class="col s6"}}
+          {{md-check name="Seasonal" checked=data.seasonal class="col s6"}}
 <!--To do: Pass category down to route to save relationship-->
           {{md-select content=categories
             value=dish.category_id

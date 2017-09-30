@@ -19,14 +19,6 @@ body{
   right: 0;
 }
 
-.delete-button{
-  background-color: $error-color;
-}
-
-.cancel-button{
-  background-color: $disbaled-color;
-}
-
 .card-panel {
   margin-bottom: 0;
 }
@@ -72,9 +64,6 @@ Category Filter buttons
 */
 .category-button {
   margin-bottom: 0.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .filter-buttons > button{
   width: 100%;
@@ -86,21 +75,22 @@ Category Filter buttons
 /*
 Fonts
 */
+p.secondary-content{
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+h5.item-price.large-price {
+  margin-bottom: 0;
+}
 
 .category-type{
   font-weight: bolder;
   color: white;
 }
-.category-type-khmer{
-  color: white;
-}
-.large-size{
-  margin-bottom: 0;
-}
-.size-label{
-  margin-top: 0;
-  margin-bottom: 0;
-}
+
 
 @media (max-width: 450px) {
   .application-outlet{
