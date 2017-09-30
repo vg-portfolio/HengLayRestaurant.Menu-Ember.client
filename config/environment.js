@@ -58,7 +58,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/heng-lay-menu';
     ENV.locationType = 'hash';
+    ENV.apiHost = 'https://heng-lay-menu-api.herokuapp.com/';
   }
 
   return ENV;
